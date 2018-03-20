@@ -1,46 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="bootstrap.php"
+         backupStaticAttributes="false"         
          syntaxCheck="false"
          stopOnError="false"
          stopOnFailure="false"
          stopOnIncomplete="false"
+         bootstrap="bootstrap.php"
 >
     <testsuites>
         <testsuite name="functional">
             <directory suffix=".php">test</directory>
         </testsuite>
-
-        <testsuite name="integration">
-            <directory suffix=".php">integration/Rest</directory>
-        </testsuite>
-
-        <testsuite name="unit">
-            <directory suffix=".php">unit</directory>
-        </testsuite>
-        
-        <testsuite name="gg">
-            <directory suffix=".php">test/Payments</directory>
-        </testsuite>
-        
     </testsuites>
 
-    <filter>
-        <blacklist>
-            <directory suffix=".php">/usr/share/php</directory>
-            <directory suffix=".php">../yii</directory>
-            <directory suffix=".php">../build</directory>
-            <directory suffix=".php">../printforms/tcpdf</directory>
-
-            <directory suffix=".php">../application/components/NSmarty/smarty</directory>
-            <directory suffix=".php">../application/components/JSON/JSON.php</directory>
-            <directory suffix=".php">../application/components/NEmail/phpmailer</directory>
-            <directory suffix=".php">../application/components/NPear/pear</directory>
-        </blacklist>
-    </filter>
-
-    <logging>        
+    <logging> 		
         <log type="testdox-html" target="reports/docs/testdox.html"/>
     </logging>
 
