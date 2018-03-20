@@ -1,6 +1,6 @@
 <?php
 
-use VM\Test\TestCase\Selenium;
+use test\Selenium;
 
 class HelloTest extends Selenium {
 	public function setUp()
