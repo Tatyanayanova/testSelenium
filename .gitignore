@@ -1,2 +1,2 @@
-/tests/vendor
-/tests/vendor/*
+#/tests/vendor
+#/tests/vendor/*
