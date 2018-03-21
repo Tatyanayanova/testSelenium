@@ -16,7 +16,8 @@ class Hello2Test extends TestCase {
         $caps->setCapability(\ChromeOptions::CAPABILITY, $options);
         $this->webDriver = \RemoteWebDriver::create('http://localhost:4444/wd/hub', $caps);
         $this->webDriver->manage()->timeouts()->implicitlyWait(10);
-        $this->startUrl = "http://testsel.dz/manager/";
+        //$this->startUrl = "http://testsel.dz/manager/";
+        $this->startUrl = "http://manager/";
         $this->webDriver->get($this->startUrl);
     }
 
