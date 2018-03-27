@@ -1,2 +1,11 @@
 test:
   script: cat index.php file2.txt | grep -q 'Hello'
+  
+test2:
+    stage: test
+    script: cd tests
+    
+test3:
+    stage: test2
+    script: ./vendor/phpunit/phpunit/phpunit --testsuite functional
+    
