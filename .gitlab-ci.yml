@@ -5,22 +5,23 @@ test:
 # Select image from https://hub.docker.com/_/php/  
 image: php:7.2-apache 
 
+cache:
+  paths:
+  - vendor/
 
 before_script:
 # Install git, the php image doesn't have installed
 - apt-get update -yqq
 - apt-get install git -yqq
-
 # Install mysql driver
 - docker-php-ext-install pdo_mysql
+
+
 - cd tests
 # Install composer
 - curl -sS https://getcomposer.org/installer | php
-
 # Install all project dependencies
 - php composer.phar install
 
-cache:
-  paths:
-  - vendor/
+- GITLAB_TARGET_SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub npm start
     
