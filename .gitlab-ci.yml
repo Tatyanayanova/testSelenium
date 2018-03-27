@@ -19,7 +19,7 @@ before_script:
 
 # Install composer
 - curl -sS https://getcomposer.org/installer | php
-- sudo mv composer.phar /usr/local/bin/composer
+- mv composer.phar /usr/local/bin/composer
 - composer global require fxp/composer-asset-plugin
 
 - cd tests
