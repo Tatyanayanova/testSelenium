@@ -5,9 +5,6 @@ test:
 # Select image from https://hub.docker.com/_/php/  
 image: php:7.2-apache 
 
-cache:
-  paths:
-  - vendor/
 
 before_script:
 # Install git, the php image doesn't have installed
@@ -24,6 +21,9 @@ before_script:
 
 - cd tests
 # Install all project dependencies
-- php composer.phar install
+- php composer install
 
-     
+cache:
+  paths:
+  - vendor/
+    
