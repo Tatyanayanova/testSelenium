@@ -4,8 +4,4 @@ test:
 test2:
     stage: test
     script: cd tests
-    
-test3:
-    stage: test2
-    script: ./vendor/phpunit/phpunit/phpunit --testsuite functional
-    
+     
