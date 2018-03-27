@@ -1,10 +1,7 @@
 test:
   script: cat index.php file2.txt | grep -q 'Hello'
   
-test2:
-    stage: test
-    script: cd 
-    
+
 # Select image from https://hub.docker.com/_/php/  
 image: php:7.2-apache 
 
@@ -22,7 +19,7 @@ before_script:
 
 # Install composer
 - curl -sS https://getcomposer.org/installer | php
-
+- cd tests
 # Install all project dependencies
 - php composer.phar install
 
