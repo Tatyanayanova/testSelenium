@@ -13,15 +13,12 @@ before_script:
 
 # Install mysql driver
 - docker-php-ext-install pdo_mysql
-
+- cd tests
 # Install composer
 - curl -sS https://getcomposer.org/installer | php
-- mv composer.phar /usr/local/bin/composer
-- composer global require fxp/composer-asset-plugin
 
-- cd tests
 # Install all project dependencies
-- php composer install
+- php composer.phar install
 
 cache:
   paths:
