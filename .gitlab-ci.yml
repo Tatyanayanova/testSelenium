@@ -31,8 +31,8 @@ before_script:
     #Загрузкa selenium-server
     - wget -O selenium.jar https://goo.gl/UzaKCo
     #устанавливаем Java
-    - add-apt-repository ppa:webupd8team/java
     - apt-get update
-    - apt-get install oracle-java8-installer
+    
+    - apt-get install default-jre
 
     - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar -debug
