@@ -36,6 +36,6 @@ before_script:
     - apt-get install -y  software-properties-common 
     - add-apt-repository ppa:webupd8team/java -y 
     - apt-get update 
-    - apt-get install -y oracle-java8-installer 
+    - yes | apt-get install  oracle-java8-installer 
     
     - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar -debug
