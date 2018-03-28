@@ -23,6 +23,7 @@ before_script:
     - php composer.phar install
     #установить chromedriver
     - apt-get install wget
+    - apt-get install unzip
     - wget -O chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
     - unzip chromedriver_linux64.zip
     - chown root:root chromedriver
