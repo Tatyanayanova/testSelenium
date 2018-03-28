@@ -32,8 +32,8 @@ before_script:
     - wget -O selenium.jar https://goo.gl/UzaKCo
     #Установка и настройка Selenium
     - apt-get update
-    - apt-get install nodejs #устанавливаем nodejs
-    - apt-get install npm #устанавливаем nmp
+    - yes | apt-get install nodejs #устанавливаем nodejs
+    - yes |apt-get install npm #устанавливаем nmp
     - ln -s /usr/bin/nodejs /usr/bin/node  #создаем ссылку
     - npm install selenium-webdriver #устанавливаем Webdriver
     - npm install yargs
