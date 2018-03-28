@@ -10,18 +10,32 @@ cache:
   - vendor/
 
 before_script:
-# Install git, the php image doesn't have installed
-- apt-get update -yqq
-- apt-get install git -yqq
-# Install mysql driver
-- docker-php-ext-install pdo_mysql
+    # Install git, the php image doesn't have installed
+    - apt-get update -yqq
+    - apt-get install git -yqq
+    # Install mysql driver
+    - docker-php-ext-install pdo_mysql
 
-
-- cd tests
-# Install composer
-- curl -sS https://getcomposer.org/installer | php
-# Install all project dependencies
-- php composer.phar install
-
-- GITLAB_TARGET_SELENIUM_REMOTE_URL=http://localhost:4444/wd/hub npm start
-    
+    - cd tests
+    # Install composer
+    - curl -sS https://getcomposer.org/installer | php
+    # Install all project dependencies
+    - php composer.phar install
+    #установить chromedriver
+    - wget -O chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip
+    - unzip chromedriver_linux64.zip
+    - chown root:root chromedriver
+    - chmod 0755 chromedriver
+    #Загрузки selenium-server
+    - wget -O selenium.jar https://goo.gl/UzaKCo
+    #Установка и настройка Selenium
+    - apt-get update
+    - apt-get install nodejs #устанавливаем nodejs
+    - apt-get install npm #устанавливаем nmp
+    - ln -s /usr/bin/nodejs /usr/bin/node  #создаем ссылку
+    - npm install selenium-webdriver #устанавливаем Webdriver
+    - npm install yargs
+    - apt-get install default-jre #устанавливаем Java 
+    - npm install selenium-standalone@latest -g 
+    - selenium-standalone install
+    - selenium-standalone start
