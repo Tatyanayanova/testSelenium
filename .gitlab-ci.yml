@@ -33,6 +33,6 @@ before_script:
     #устанавливаем Java
     - apt-get update
     
-    - apt-get install default-jre
+    - yes | apt-get install default-jre
 
     - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar -debug
