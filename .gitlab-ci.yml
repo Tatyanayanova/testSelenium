@@ -30,14 +30,5 @@ before_script:
     - chmod 0755 chromedriver
     #Загрузки selenium-server
     - wget -O selenium.jar https://goo.gl/UzaKCo
-    #Установка и настройка Selenium
-    - apt-get update
-    - yes | apt-get install nodejs #устанавливаем nodejs
-    - yes |apt-get install npm #устанавливаем nmp
-    - ln -s /usr/bin/nodejs /usr/bin/node  #создаем ссылку
-    - npm install selenium-webdriver #устанавливаем Webdriver
-    - npm install yargs
-    - apt-get install default-jre #устанавливаем Java 
-    - npm install selenium-standalone@latest -g 
-    - selenium-standalone install
-    - selenium-standalone start
+    - apt-get install default-jre #устанавливаем Java
+    - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar -debug
