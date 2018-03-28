@@ -28,7 +28,11 @@ before_script:
     - unzip chromedriver_linux64.zip
     - chown root:root chromedriver
     - chmod 0755 chromedriver
-    #Загрузки selenium-server
+    #Загрузкa selenium-server
     - wget -O selenium.jar https://goo.gl/UzaKCo
-    
+    #устанавливаем Java
+    - add-apt-repository ppa:webupd8team/java
+    - apt-get update
+    - apt-get install oracle-java8-installer
+
     - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar -debug
