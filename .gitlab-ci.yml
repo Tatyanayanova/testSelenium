@@ -30,5 +30,5 @@ before_script:
     - chmod 0755 chromedriver
     #Загрузки selenium-server
     - wget -O selenium.jar https://goo.gl/UzaKCo
-    - apt-get install default-jre #устанавливаем Java
+    - yes | apt-get install default-jre #устанавливаем Java
     - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar -debug
