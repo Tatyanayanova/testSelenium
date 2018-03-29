@@ -3,7 +3,7 @@ test:
   
 
 
-image: registry.gitlab.com/tatyanayanova/testselenium:latest
+image: registry.gitlab.com/tatyanayanova/testselenium:manager
 
 cache:
   paths:
