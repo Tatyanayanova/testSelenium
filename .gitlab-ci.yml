@@ -9,11 +9,19 @@ cache:
   paths:
   - vendor/
 
-before_script:    
+before_script: 
+    - ls
     - cd tests    
     # Install composer
     - curl -sS https://getcomposer.org/installer | php
     # Install all project dependencies
     - php composer.phar install
+    - ls
     - cd /
     - ls
+    - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar >/dev/null 2>&1 < /dev/null &
+    - cd /builds/TatyanaYanova/testSelenium
+    - ls
+    - cd tests
+    - ls
+    - ./vendor/phpunit/phpunit/phpunit --testsuite functional
