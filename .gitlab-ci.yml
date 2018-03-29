@@ -11,7 +11,9 @@ cache:
 
 before_script:    
     - cd tests    
+    # Install composer
+    - curl -sS https://getcomposer.org/installer | php
     # Install all project dependencies
-    - php composer install
+    - php composer.phar install
     - cd /
     - ls
