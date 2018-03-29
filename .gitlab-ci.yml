@@ -3,7 +3,7 @@ test:
   
 
 # Select image from https://hub.docker.com/_/php/  
-image: https://gitlab.com/TatyanaYanova/testSelenium
+image: gitlab.com/TatyanaYanova/testSelenium
 
 cache:
   paths:
