@@ -19,7 +19,7 @@ before_script:
     - ls
     - cd /
     - ls
-    - java -Dwebdriver.chrome.driver=chromedriver -jar selenium.jar >/dev/null 2>&1 < /dev/null &
+    - java -Dwebdriver.chrome.driver="/chromedriver" -jar selenium.jar >/dev/null 2>&1 < /dev/null &
     - cd /builds/TatyanaYanova/testSelenium
     - ls
     - cd tests
