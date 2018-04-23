@@ -1,0 +1,3 @@
+string(4) "5555"
+string(6) "update"
+{"id":1,"created_at":"2018-04-19 14:54:38","updated_at":"2018-04-20 12:44:14","title":"ручка2","numeric":3,"deleted_at":null}
