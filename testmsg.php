@@ -7,11 +7,12 @@
  */
 
 
-define('HTML_STATISTIC_URL', 'https://login.vetmanager.ru/domenStatistic/allStatistic');
-define('API_KEY', '9205814c8bc98857f5e07f3bae30ad68');
+define('HTML_STATISTIC_URL', '');
+define('API_KEY', '');
 define('CHANNEL', '#test');
 
 function slackJeson($data) {
+    var_dump('slackJeson');
     $ch = curl_init("https://tanyayanova.slack.com/api/chat.postMessage");
     $data_string = json_encode($data);    
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
@@ -20,7 +21,7 @@ function slackJeson($data) {
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json',
-        'Authorization: Bearer xoxp-335261537463-334177305284-352739427747-8266018d0d29ac3644f01fe8d851fe9d',
+        'Authorization: Bearer xoxp-335261537463-334177305284-359201422454-8925034befde22b09808b130f9045f3f',
         'Content-Length: ' . strlen($data_string))
     );
     $result = curl_exec($ch);
@@ -30,7 +31,7 @@ function slackJeson($data) {
 }
 
 function scheduleSlackJeson() {
-
+    var_dump('scheduleSlackJeson');
     $report = json_decode(file_get_contents(HTML_STATISTIC_URL . '?key=' . API_KEY . '&json=true'));
     $msgEndTariffPlan = array();
     $msgEndTariffPlan[] = [
@@ -168,7 +169,7 @@ function scheduleSlackJeson() {
 
     slackJeson($data);
 }
-slack('hello', '#test');
+//slack('hello', '#test');
 var_dump(scheduleSlackJeson());
 
 
